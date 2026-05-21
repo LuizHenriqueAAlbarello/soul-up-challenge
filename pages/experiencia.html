@@ -29,19 +29,40 @@
             <a href="login.html" class="login-corner">LOGIN</a>
         </header>
 
-        <main class="page-content prototype-page experience-page">
-            <section class="page-hero">
+        <main class="page-content quest-page">
+            <section class="page-hero quest-hero">
                 <span class="page-tag">Experiência interativa</span>
-                <h1>Receba sugestões da Lumën</h1>
-                <p>Escolha um perfil de usuário e veja a Lumën indicar ações para melhorar engajamento, clareza e retenção dentro da Soul UP.</p>
+                <h1>Missões sustentáveis com a Lumën</h1>
+                <p>Escolha um problema ecológico, veja a causa principal e complete quests com pontuação por dificuldade. A ideia é transformar pequenas ações sustentáveis em progresso real dentro da Soul UP.</p>
             </section>
 
-            <section class="lumen-experience-stage" aria-label="Lumën sugerindo melhorias para a experiência do usuário">
-                <div class="lumen-assistant experience-lumen" aria-label="Assistente Lumën">
-                    <div class="lumen-bubble experience-bubble" aria-live="polite">
-                        <span class="mockup-label">Sugestão da Lumën</span>
-                        <h2 id="prototype-title">Onboarding guiado</h2>
-                        <p id="prototype-text" class="lumen-message">Para usuários novos, a melhor experiência começa com uma missão curta, explicação simples e feedback imediato sobre os pontos ganhos.</p>
+            <section class="quest-dashboard" aria-label="Painel interativo de quests sustentáveis">
+                <aside class="quest-player-card" aria-label="Progresso do usuário">
+                    <span class="mockup-label">Seu progresso</span>
+                    <h2 id="quest-user-name">Visitante Soul UP</h2>
+                    <p>Complete quests para ganhar Pontos Verdes e subir seu nível sustentável.</p>
+
+                    <div class="quest-level-box">
+                        <span>Nível atual</span>
+                        <strong id="quest-level">Eco Iniciante</strong>
+                    </div>
+
+                    <div class="prototype-score quest-score-row">
+                        <span>Pontos acumulados</span>
+                        <strong id="quest-total-points">0</strong>
+                    </div>
+
+                    <div class="progress-track" aria-hidden="true">
+                        <span id="quest-progress-bar"></span>
+                    </div>
+                    <small id="quest-progress-text">Faltam 120 pontos para o próximo nível.</small>
+                </aside>
+
+                <div class="lumen-assistant quest-lumen" aria-label="Lumën recomendando quests">
+                    <div class="lumen-bubble quest-bubble" aria-live="polite">
+                        <span class="mockup-label" id="quest-lumen-label">Plano da Lumën</span>
+                        <h2 id="quest-problem-title">Mudanças climáticas</h2>
+                        <p id="quest-lumen-text" class="lumen-message">Comece por ações de energia e transporte. São hábitos simples de medir, pontuar e transformar em evolução dentro da plataforma.</p>
                     </div>
 
                     <div class="lumen-mascot" aria-hidden="true">
@@ -64,23 +85,57 @@
                     </div>
                 </div>
 
-                <div class="prototype-controls experience-controls" role="group" aria-label="Escolha o perfil de experiência">
-                    <button class="prototype-option active" type="button" data-profile="novo">Usuário novo</button>
-                    <button class="prototype-option" type="button" data-profile="engajado">Usuário engajado</button>
-                    <button class="prototype-option" type="button" data-profile="retorno">Usuário retornando</button>
-                    <button class="prototype-option" type="button" data-profile="baixo-engajamento">Baixo engajamento</button>
+                <aside class="quest-info-card" aria-label="Causa e orientação da quest">
+                    <span class="mockup-label">Causa principal</span>
+                    <h2 id="quest-cause-title">Emissões de gases de efeito estufa</h2>
+                    <p id="quest-cause-text">Uso de energia, transporte movido a combustíveis fósseis e consumo sem controle aumentam emissões e desperdício de recursos.</p>
+
+                    <div class="quest-difficulty-control">
+                        <label for="difficulty-filter">Filtrar dificuldade</label>
+                        <select id="difficulty-filter">
+                            <option value="todas">Todas</option>
+                            <option value="facil">Fácil</option>
+                            <option value="medio">Médio</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="quest-panel" aria-label="Escolha de problemas ecológicos e missões">
+                <div class="quest-panel-header">
+                    <div>
+                        <span class="page-tag">Escolha um tema</span>
+                        <h2>Problemas ecológicos</h2>
+                        <p>As quests foram pensadas para serem possíveis na rotina de um estudante, sem depender de banco de dados ou recursos avançados.</p>
+                    </div>
                 </div>
 
-                <article class="prototype-result experience-summary" aria-live="polite">
-                    <div class="prototype-score">
-                        <span>Impacto estimado na experiência</span>
-                        <strong id="prototype-score">60%</strong>
-                    </div>
-                    <div class="progress-track"><span id="prototype-bar" class="progress-fill--60"></span></div>
-                    <p id="prototype-detail">Foco em reduzir dúvida inicial, apresentar uma tarefa simples e criar sensação rápida de avanço.</p>
-                </article>
+                <div class="quest-tabs" role="tablist" aria-label="Problemas ecológicos">
+                    <button class="quest-tab active" type="button" data-problem="clima">Mudanças climáticas</button>
+                    <button class="quest-tab" type="button" data-problem="residuos">Resíduos</button>
+                    <button class="quest-tab" type="button" data-problem="agua">Água</button>
+                    <button class="quest-tab" type="button" data-problem="biodiversidade">Biodiversidade</button>
+                    <button class="quest-tab" type="button" data-problem="poluicao">Poluição</button>
+                </div>
+
+                <div class="quest-list-header">
+                    <h2 id="quest-list-title">Quests recomendadas</h2>
+                    <p id="quest-list-subtitle">Complete uma missão por vez e acompanhe sua pontuação.</p>
+                </div>
+
+                <div class="quest-grid" id="quest-grid" aria-live="polite"></div>
             </section>
         </main>
+
+        <div class="quest-modal" id="quest-modal" aria-hidden="true" role="dialog" aria-labelledby="quest-modal-title" aria-modal="true">
+            <div class="quest-modal-box">
+                <span class="mockup-label">Quest concluída</span>
+                <h2 id="quest-modal-title">Boa escolha!</h2>
+                <p id="quest-modal-text">Você ganhou pontos verdes.</p>
+                <button type="button" id="quest-modal-close">Continuar</button>
+            </div>
+        </div>
 
         <footer>
             <p>© 2026 Soul UP - Todos os direitos reservados</p>

@@ -973,7 +973,7 @@ footer {
 }
 
 /* =========================
-   SEÇÕES SOBRE: TECNOLOGIAS E ROADMAP
+SEÇÕES SOBRE: TECNOLOGIAS E ROADMAP
 ========================= */
 .tech-panel,
 .roadmap-panel {
@@ -1064,7 +1064,7 @@ footer {
     }
 }
 
-/* ===================== Ajustes finais - requisitos Front-End ===================== */
+/* ===================== requisitos Front-End ===================== */
 .banner .title {
     display: block;
 }
@@ -1275,7 +1275,7 @@ footer {
 .progress-track .progress-fill--65 { width: 65%; }
 .progress-track .progress-fill--60 { width: 60%; }
 
-/* ===================== Correção final: menu e experiência Lumën ===================== */
+/* ===================== Experiência Interativa ===================== */
 header {
     width: min(1280px, calc(100% - 2rem));
     padding: 0.85rem 1rem;
@@ -1447,7 +1447,7 @@ header::before {
     }
 }
 
-/* ===================== Ajuste responsivo final - Experiência Interativa ===================== */
+/* ===================== Experiência Interativa ===================== */
 .experience-page {
     width: min(1180px, calc(100% - 1.25rem));
     overflow: hidden;
@@ -1945,4 +1945,434 @@ header::before {
         font-size: 0.7rem;
         letter-spacing: 0.055rem;
     }
+}
+
+/* ===================== Quests sustentáveis - Experiência ===================== */
+.quest-page {
+    width: min(1240px, calc(100% - 1.25rem));
+}
+
+.quest-hero {
+    width: min(920px, 100%);
+}
+
+.quest-dashboard {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.9fr) minmax(280px, 1.05fr) minmax(240px, 0.9fr);
+    gap: clamp(1rem, 2.5vw, 1.4rem);
+    align-items: center;
+    margin-bottom: clamp(1.5rem, 4vw, 2.6rem);
+}
+
+.quest-player-card,
+.quest-info-card,
+.quest-panel,
+.quest-card,
+.quest-modal-box {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, rgba(0, 18, 16, 0.86), rgba(0, 8, 7, 0.68));
+    box-shadow: 0 24px 75px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(14px);
+}
+
+.quest-player-card,
+.quest-info-card {
+    min-height: 360px;
+    padding: clamp(1.2rem, 3vw, 1.7rem);
+}
+
+.quest-player-card h2,
+.quest-info-card h2,
+.quest-panel h2,
+.quest-card h3,
+.quest-modal-box h2 {
+    color: var(--text);
+}
+
+.quest-player-card p,
+.quest-info-card p,
+.quest-panel p,
+.quest-card p,
+.quest-card small,
+.quest-player-card small {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.quest-level-box {
+    display: grid;
+    gap: 0.3rem;
+    margin: 1.2rem 0 0.4rem;
+    padding: 1rem;
+    border: 1px solid rgba(114, 255, 182, 0.24);
+    border-radius: 18px;
+    background: rgba(0, 247, 255, 0.08);
+}
+
+.quest-level-box span,
+.quest-score-row span,
+.quest-difficulty-control label {
+    color: #cffff9;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+}
+
+.quest-level-box strong,
+.quest-score-row strong {
+    color: var(--green);
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+}
+
+.quest-score-row {
+    margin-top: 0.8rem;
+}
+
+.quest-lumen {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(410px, 100%);
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    justify-items: center;
+    animation: experienceLumenFloat 3.8s ease-in-out infinite;
+}
+
+.quest-bubble {
+    width: min(430px, 100%);
+    min-height: 205px;
+    margin-bottom: 1rem;
+    padding: clamp(1rem, 2.5vw, 1.35rem);
+    text-align: center;
+}
+
+.quest-bubble h2 {
+    margin-bottom: 0.55rem;
+    font-size: clamp(1.45rem, 4vw, 2.05rem);
+}
+
+.quest-bubble.is-changing {
+    animation: suggestionPop 0.42s ease;
+}
+
+.quest-lumen .lumen-mascot {
+    margin-inline: auto;
+}
+
+.quest-difficulty-control {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 1.25rem;
+}
+
+.quest-difficulty-control select {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 1rem;
+    border: 1px solid rgba(111, 255, 240, 0.36);
+    border-radius: 16px;
+    color: var(--text);
+    background: rgba(0, 7, 6, 0.82);
+    font: inherit;
+    font-weight: 800;
+}
+
+.quest-panel {
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.quest-panel-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.quest-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 1.2rem 0 1.4rem;
+}
+
+.quest-tab,
+.quest-complete-btn,
+.quest-modal-box button {
+    border: 1px solid rgba(111, 255, 240, 0.28);
+    border-radius: 999px;
+    color: var(--text);
+    background: rgba(0, 247, 255, 0.08);
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quest-tab {
+    padding: 0.78rem 1rem;
+}
+
+.quest-tab:hover,
+.quest-tab:focus-visible,
+.quest-tab.active,
+.quest-complete-btn:hover,
+.quest-complete-btn:focus-visible,
+.quest-modal-box button:hover,
+.quest-modal-box button:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--line-strong);
+    background: rgba(114, 255, 182, 0.16);
+    box-shadow: 0 16px 45px rgba(0, 247, 255, 0.12);
+}
+
+.quest-list-header {
+    margin-bottom: 1rem;
+}
+
+.quest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.quest-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 310px;
+    padding: clamp(1.1rem, 2.5vw, 1.35rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.quest-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    pointer-events: none;
+    background: radial-gradient(circle at top right, var(--primary), transparent 34%);
+}
+
+.quest-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--line-strong);
+    box-shadow: 0 28px 80px rgba(0, 247, 255, 0.14);
+}
+
+.quest-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.quest-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+
+.quest-card-top strong {
+    color: var(--green);
+    font-size: 1.18rem;
+}
+
+.quest-difficulty {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    color: #00140f;
+    background: linear-gradient(135deg, var(--primary), var(--green));
+    font-size: 0.78rem;
+    font-weight: 950;
+    text-transform: uppercase;
+}
+
+.quest-card h3 {
+    font-size: clamp(1.18rem, 2.5vw, 1.45rem);
+}
+
+.quest-card small {
+    margin-top: auto;
+}
+
+.quest-complete-btn {
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.86rem 1rem;
+}
+
+.quest-complete-btn:disabled {
+    cursor: not-allowed;
+    color: rgba(242, 255, 252, 0.62);
+    background: rgba(114, 255, 182, 0.12);
+    border-color: rgba(114, 255, 182, 0.2);
+    box-shadow: none;
+    transform: none;
+}
+
+.quest-card--medio::before {
+    background: radial-gradient(circle at top right, var(--green), transparent 34%);
+}
+
+.quest-card--dificil::before {
+    background: radial-gradient(circle at top right, #fff06a, transparent 34%);
+}
+
+.quest-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(10px);
+}
+
+.quest-modal.is-open {
+    display: flex;
+}
+
+.quest-modal-box {
+    width: min(440px, 100%);
+    padding: clamp(1.25rem, 4vw, 2rem);
+    text-align: center;
+    animation: suggestionPop 0.35s ease;
+}
+
+.quest-modal-box p {
+    margin: 0.8rem 0 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+.quest-modal-box button {
+    padding: 0.85rem 1.25rem;
+}
+
+@media (max-width: 1100px) {
+    .quest-dashboard {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quest-lumen {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .quest-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .quest-page {
+        width: min(100% - 1rem, 680px);
+        padding: clamp(1.1rem, 5vw, 1.6rem);
+        border-radius: 22px;
+    }
+
+    .quest-hero {
+        margin-bottom: 1.25rem;
+    }
+
+    .quest-hero h1 {
+        font-size: clamp(2rem, 9vw, 2.75rem);
+    }
+
+    .quest-dashboard,
+    .quest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quest-lumen {
+        width: min(100%, 330px);
+        grid-row: auto;
+    }
+
+    .quest-bubble {
+        width: min(100%, 320px);
+        min-height: auto;
+        padding: 1rem;
+        border-radius: 22px;
+    }
+
+    .quest-lumen .lumen-mascot {
+        width: 230px;
+        height: 260px;
+        transform: scale(0.74);
+        transform-origin: top center;
+        margin-top: -0.15rem;
+        margin-bottom: -4.6rem;
+    }
+
+    .quest-player-card,
+    .quest-info-card {
+        min-height: auto;
+    }
+
+    .quest-tabs {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .quest-tab {
+        width: 100%;
+        border-radius: 16px;
+        padding: 0.92rem;
+    }
+
+    .quest-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .quest-page {
+        width: calc(100% - 0.7rem);
+        padding: 1rem 0.85rem;
+    }
+
+    .quest-lumen {
+        width: min(100%, 292px);
+    }
+
+    .quest-bubble {
+        width: 100%;
+        padding: 0.9rem;
+    }
+
+    .quest-lumen .lumen-mascot {
+        transform: scale(0.66);
+        margin-top: -0.45rem;
+        margin-bottom: -5.6rem;
+    }
+
+    .quest-player-card,
+    .quest-info-card,
+    .quest-panel,
+    .quest-card {
+        padding: 0.95rem;
+        border-radius: 18px;
+    }
+
+    .quest-card-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* Barra de progresso inicial das quests */
+#quest-progress-bar {
+    width: 0%;
 }
